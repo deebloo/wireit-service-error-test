@@ -1,4 +1,4 @@
-## To Reproduce
+## To Reproduce (tested on M1 Mac)
 
 ```bash
 npm start --watch

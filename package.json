@@ -1,0 +1,41 @@
+{
+  "name": "wireit-service-error-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "wireit",
+    "tsc": "wireit"
+  },
+  "wireit": {
+    "start": {
+      "command": "node target/main.js",
+      "service": true,
+      "dependencies": [
+        "tsc"
+      ]
+    },
+    "tsc": {
+      "command": "tsc --build --pretty",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "target/**"
+      ],
+      "clean": "if-file-deleted"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.10.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "wireit": "^0.9.0"
+  }
+}
